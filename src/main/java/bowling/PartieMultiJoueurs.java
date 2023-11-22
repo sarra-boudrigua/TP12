@@ -20,7 +20,7 @@ public class PartieMultiJoueurs implements IPartieMultiJoueurs{
 		for (String nom: nomsDesJoueurs) {
 			lesParties.put(nom, new PartieMonoJoueur());
 		}
-		return tourJoueur();
+		return  "Prochain tir: joueur " + nomsDesJoueurs[tourJoueurNo] + ", tour n° " + lesParties.get(nomsDesJoueurs[tourJoueurNo]).numeroTourCourant() + ", boule n° " + lesParties.get(nomsDesJoueurs[tourJoueurNo]).numeroProchainLancer();
 	}
 
 	@Override
@@ -30,7 +30,8 @@ public class PartieMultiJoueurs implements IPartieMultiJoueurs{
 		partieJoueur.enregistreLancer(nombreDeQuillesAbattues);
 		if (partieJoueur.numeroProchainLancer() == 1 || partieJoueur.estTerminee()) tourJoueurNo = (tourJoueurNo+1)%nbJoueur;
 		if (estTerminer()) return "Partie terminée";
-		return tourJoueur();
+		return  "Prochain tir: joueur " + nomsDesJoueurs[tourJoueurNo] + ", tour n° " + lesParties.get(nomsDesJoueurs[tourJoueurNo]).numeroTourCourant() + ", boule n° " + lesParties.get(nomsDesJoueurs[tourJoueurNo]).numeroProchainLancer();
+
 	}
 
 	@Override
@@ -40,11 +41,9 @@ public class PartieMultiJoueurs implements IPartieMultiJoueurs{
 		return partieJoueur.score();
 	}
 
-	private String tourJoueur(){
-		return "Prochain tir: joueur " + nomsDesJoueurs[tourJoueurNo] + ", tour n° " + lesParties.get(nomsDesJoueurs[tourJoueurNo]).numeroTourCourant() + ", boule n° " + lesParties.get(nomsDesJoueurs[tourJoueurNo]).numeroProchainLancer();
-	}
 
 	public boolean estTerminer(){
+		
 		return lesParties.get(nomsDesJoueurs[nbJoueur-1]).estTerminee();
 	}
 }

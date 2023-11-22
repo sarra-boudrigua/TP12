@@ -8,7 +8,6 @@ import static org.junit.jupiter.api.Assertions.*;
 public class PartieMultiJoueursTest {
 
 	private PartieMultiJoueurs partie;
-	private String[] lesJoueurs;
 
 	@BeforeEach
 	public void setUp(){
