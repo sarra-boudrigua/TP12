@@ -13,7 +13,6 @@ public class PartieMultiJoueursTest {
 	@BeforeEach
 	public void setUp(){
 		partie = new PartieMultiJoueurs();
-		lesJoueurs = new String[]{"Didier Boule", "Alain Lucci"};
 	}
 	@Test
 	void testMultiPlayerGame() {
