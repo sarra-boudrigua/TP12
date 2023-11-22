@@ -51,7 +51,7 @@ public class PartieMonoJoueur {
      * @return Le score du joueur
      */
     public int score() {
-        return premierTour.score();
+	    return premierTour.score();
     }
 
     /**
@@ -65,7 +65,8 @@ public class PartieMonoJoueur {
      * @return Le numéro du tour courant [1..10], ou 0 si le jeu est fini
      */
     public int numeroTourCourant() {
-        return estTerminee() ? 0 : tourCourant.getNumero();
+        
+	    return estTerminee() ? 0 : tourCourant.getNumero();
     }
 
     /**
@@ -73,7 +74,8 @@ public class PartieMonoJoueur {
      *         est fini
      */
     public int numeroProchainLancer() {
-        return estTerminee() ? 0 : tourCourant.getBoulesLancees() + 1;
+        
+	    return estTerminee() ? 0 : tourCourant.getBoulesLancees() + 1;
     }
 
 }
